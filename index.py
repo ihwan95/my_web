@@ -17,8 +17,8 @@ try:
     files.sort(key=lambda x: os.path.getmtime(x), reverse = True)
     nav_list = ""
     for name in files:
-      name=name[5:]     # root폴더("List/") 없애기
-      nav_list = nav_list + f'<li><a href="index.py?id={name}"> {name} </a> </li>\n'
+      # root폴더("List/") 없애고 li태그 만들기
+      nav_list = nav_list + f'<li><a href="index.py?id={name[5:]}"> {name[5:]} </a> </li>\n'
 
      # id값 확인
     form = cgi.FieldStorage()
@@ -82,7 +82,7 @@ print(f"""
           <div id="context"> {description} </div>
         </div>
       </main>
-      <a href="https://github.com/ihwan95/my_web" target="_blank" onclick="alert('github페이지로 이동합니다.')" id="github"> GITHUB link </a>
+      <a href="https://github.com/ihwan95/my_web" target="_blank" onclick="alert('github페이지로 이동합니다.')" id="github"> Web Page_Source </a>
     </section>
   </body>
 
