@@ -1,0 +1,6 @@
+<form action = "process_update.py" method = "post">
+    <p> <input type="hidden" name = "title_past" value = "{pageId}"> </p>
+    <p> <input type="text" name = "title" value = "{pageId}"> </p>
+    <p> <textarea rows = "8" name = "context"> {pageId} </textarea> </p>
+    <p> <input type="submit"> </p>
+</form>

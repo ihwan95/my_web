@@ -1,0 +1,9 @@
+<form action = "process_post.py" method = "post">
+  <p>
+    <input type="text" name = "title" placeholder = "title">
+  </p>
+  <p>
+    <textarea rows = "10" name = "context">Context... </textarea>
+  </p>
+  <input type="submit" onclick="return confirm('게시하시겠습니까?')">
+</form>
