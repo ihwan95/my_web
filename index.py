@@ -82,7 +82,7 @@ print(f"""
           <div id="context"> {description} </div>
         </div>
       </main>
-      <a href="https://github.com/ihwan95" target="_blank" onclick="alert('github페이지로 이동합니다.')" id="github"> GITHUB link </a>
+      <a href="https://github.com/ihwan95/my_web" target="_blank" onclick="alert('github페이지로 이동합니다.')" id="github"> GITHUB link </a>
     </section>
   </body>
 
