@@ -5,17 +5,24 @@ import sys
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stdin.reconfigure(encoding='utf-8')
 
+
 form = cgi.FieldStorage()
 title_past = form["title_past"].value
 context = form["context"].value
-if "title" in form:
-    title = form["title"].value
-else: title = title_past
 
-search_dir = "List/"
-os.rename(search_dir + title_past, search_dir + title)
-with open("List/" + title, 'w', encoding="utf-8") as f:
-  f.write(context)
+try:
+    if "title" in form:
+        title = form["title"].value
+    else: title = title_past
 
-print("Location: index.py?id=" + title)
-print()
+    search_dir = "List/"
+    os.rename(search_dir + title_past, search_dir + title)
+    with open("List/" + title, 'w', encoding="utf-8") as f:
+      f.write(context)
+
+    print(f"""Location: index.py?id={title}\n""")
+except Exception as e:
+    print(f"""<script>
+                alert("Errorcode = {e}")
+                location.replace('index.py')
+            </script>""")

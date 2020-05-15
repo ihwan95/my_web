@@ -1,12 +1,9 @@
 <form action = "process_post.py" method = "post">
   <p>
-  <input type="file" name = "file">
-  </p>
-  <p>
     <input type="text" name = "title" placeholder = "title" required>
   </p>
   <p>
-    <textarea rows = "10" name = "context">Context... </textarea>
+    <textarea name = "context" placeholder = "Context..." required></textarea>
   </p>
   <input type="submit" onclick="return confirm('게시하시겠습니까?')">
 </form>

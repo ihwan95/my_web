@@ -69,25 +69,25 @@ main{
   text-align: right;
 }
 button{
-  padding: 0px;
-  margin-right: 10px;
-  font-size: 1.2rem;
-  /* color: white !important; */
-  text-decoration: none;
+  padding: 1px 4px 1px 4px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: white !important;
+  background-color: #754c2d;
+  opacity: 0.9;
+  border-radius: 7px;
 }
-/* #post{
-  background-color: blue;
-}
-#modify{
+#post{
   background-color: green;
 }
 #delete{
-  background-color: red;
-} */
+  background-color: #ef0000;
+}
+
 .article{
   height: calc(95vh - 250px);
   overflow-y: scroll;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 #title{
   padding-left: 30px;
@@ -166,6 +166,16 @@ textarea{
   .article{
     overflow-y: scroll;
     height: calc(95vh - 400px);
+  }
+  button{
+    font-size: 1.2rem;
+  }
+  input{
+    width: 50%;
+    font-size: 1.3rem;
+    -type:submit{
+      width: 20% !important;
+    }
   }
   #title{
     text-align: center;
