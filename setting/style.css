@@ -10,6 +10,7 @@
   box-sizing: border-box !important;
 }
 a:link{
+  color: black;
   text-decoration: none;
 }
 a:visited{
@@ -67,21 +68,22 @@ main{
   height: auto;
   text-align: right;
 }
-.button{
-  border: 1px solid black;
-  padding: 2px;
+button{
+  padding: 0px;
   margin-right: 10px;
-  font-weight: bold;
   font-size: 1.2rem;
-  color: white !important;
+  /* color: white !important; */
   text-decoration: none;
 }
-#post{
+/* #post{
+  background-color: blue;
+}
+#modify{
   background-color: green;
 }
 #delete{
   background-color: red;
-}
+} */
 .article{
   height: calc(95vh - 250px);
   overflow-y: scroll;
