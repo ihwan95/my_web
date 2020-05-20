@@ -28,7 +28,7 @@ def make_button(pageId):
         buttons = ""
     else:
         buttons = f"""<button onclick = "location.href='index.py?id=Post';" class='button' id="post"> 새 글 </button>
-                        <div><button onclick = "document.modify.submit();" id='modify'> 수정 </button>
+                        <div><button onclick = "location.href='modify.py?id={pageId}';" id='modify'> 수정 </button>
                         <button onclick = "location.href='process_delete.py?id={pageId}'; confirm('정말 삭제하시겠습니까');" id='delete'> 삭제 </button></div>"""
     return buttons
 
@@ -38,11 +38,8 @@ def make_context(pageId):
         context = open(pageId,'r', encoding='utf-8').read()
     else:
         context = open(search_dir + pageId,'r', encoding='utf-8').read()
-        context += f"""<form name=modify  action="modify.py" method="hidden">
-                                <input type="hidden" name = "title_past" value = "{pageId}">
-                                <input type="hidden" name = "context" value = "{context}">
-                            </form>"""
     return context
+    
 # HTML코드 출력
 def HTML(nav_list, buttons, title, context):
     print("Content-Type: text/html; charset=utf-8;\n\n")

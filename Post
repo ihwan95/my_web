@@ -1,4 +1,4 @@
-<form action = "process_post.py" method = "post">
+<form action = "process_post.py" method = "post" target='_blank'>
   <p>
     <input type="text" name = "title" placeholder = "title" required>
   </p>
@@ -7,3 +7,8 @@
   </p>
   <input type="submit" onclick="return confirm('게시하시겠습니까?')">
 </form>
+<!--<form enctype = "multipart/form-data"
+                 action = "save_file.py" method = "post">
+<p>File: <input type = "file" name = "filename" /></p>
+<p><input type = "submit" value = "Upload" /></p>
+</form>-->

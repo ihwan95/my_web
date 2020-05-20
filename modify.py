@@ -6,20 +6,20 @@ import _function
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stdin.reconfigure(encoding='utf-8')
 
+search_dir = "List/"
 
 form = cgi.FieldStorage()
-title_past = form["title_past"].value
-context = form["context"].value
+pageId = form["id"].value
+context = open(search_dir + pageId,'r', encoding='utf-8').read()
 
 try:
     title = "Modify"
     context = f"""<form action = "process_modify.py" method = "post">
-                        <input type="hidden" name = "title_past" value = "{title_past}">
-                        <p> <input type="text" name = "title" placeholder = "{title_past}"></p>
-                        <p> <textarea  name = "context">{context}</textarea> </p>
-                        <input type="submit" onclick="return confirm('수정하시겠습니까?')">
-                    </form>"""
-
+    <input type="hidden" name = "title_past" value = "{pageId}">
+    <p> <input type="text" name = "title" value = "{pageId}"></p>
+    <p> <textarea  name = "context">{context}</textarea> </p>
+    <input type="submit" onclick="return confirm('수정하시겠습니까?')">
+    </form>"""
     nav_list = _function.make_list()
     _function.HTML(nav_list, "", title, context)
 except Exception as e:
